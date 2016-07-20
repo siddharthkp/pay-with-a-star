@@ -4,7 +4,7 @@ const express = require('express');
 const request = require('request');
 const pug = require('pug');
 
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 const clientID = process.env.client_id;
 const clientSecret = process.env.client_secret;
 
