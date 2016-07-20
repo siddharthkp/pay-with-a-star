@@ -108,3 +108,7 @@ app.get('/done', (req, res) => {
     res.render('done');
 });
 
+app.get('/', (req, res) => {
+    res.end('hi');
+});
+
