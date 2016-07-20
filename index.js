@@ -4,10 +4,9 @@ const express = require('express');
 const request = require('request');
 const pug = require('pug');
 
-const config = require('./config.json');
-const port = config.port || 8080;
-const clientID = config.client_id;
-const clientSecret = config.client_secret;
+const port = process.env.port || 8080;
+const clientID = process.env.client_id;
+const clientSecret = process.env.client_secret;
 
 const app = express();
 app.set('view engine', 'pug');
