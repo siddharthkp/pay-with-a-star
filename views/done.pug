@@ -1,0 +1,11 @@
+html
+  head
+    style
+      include style.css
+    script(type='text/javascript').
+      var redirect_url = location.search.split('=')[1];
+      window.setTimeout(function () {
+        location.href = redirect_url;
+      }, 2000);
+  body
+    div Thanks for starring. Redirecting you to 
