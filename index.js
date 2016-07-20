@@ -88,7 +88,7 @@ let authorizeEndPoint = 'https://github.com/login/oauth/authorize?';
 authorizeEndPoint += 'client_id=' + clientID;
 authorizeEndPoint += '&scope=public_repo';
 authorizeEndPoint += '&redirect_uri=';
-authorizeEndPoint += 'http://localhost:8080/r/';
+authorizeEndPoint += 'https://pay-with-a-star.herokuapp.com/r/';
 
 /* s - entry point */
 
