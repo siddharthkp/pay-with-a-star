@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const request = require('request');
 const pug = require('pug');
