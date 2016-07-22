@@ -3,8 +3,9 @@
 const express = require('express');
 const request = require('request');
 const pug = require('pug');
+require('dotenv').config();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 const clientID = process.env.client_id;
 const clientSecret = process.env.client_secret;
 
