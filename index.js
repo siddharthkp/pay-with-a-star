@@ -165,6 +165,7 @@ let generateLink = (data, callback) => {
 
     database.query(query, (err, result) => {
         if (err) throw err;
+        console.log(link);
         callback(link);
     });
 };
@@ -172,6 +173,7 @@ let generateLink = (data, callback) => {
 app.post('/generate', (req, res) => {
     let data = req.body;
     generateLink(data, (link) => {
+        console.log(link);
         res.render('generate', {link});
     });
 });
