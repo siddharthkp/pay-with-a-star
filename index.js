@@ -1,22 +1,22 @@
 'use strict';
 
+require('dotenv').config();
+
+const debug = process.env.DEBUG;
+if (!debug && process.env.NEWRELIC_KEY) require('newrelic');
+
 const express = require('express');
 const request = require('request');
 const pug = require('pug');
 const bodyparser = require('body-parser');
 const pg = require('pg');
 
-require('dotenv').config();
-
 const port = process.env.PORT;
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
-const debug = process.env.DEBUG;
 
 let host = 'https://paywithastar.herokuapp.com';
 if (debug) host = 'http://localhost:' + port;
-
-if (!debug && process.env.NEWRELIC_KEY) require('newrelic');
 
 const app = express();
 app.set('view engine', 'pug');
