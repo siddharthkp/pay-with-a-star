@@ -7,14 +7,18 @@
         <link href="https://fonts.googleapis.com/css?family=Assistant:200" rel="stylesheet">
     </head>
     <body>
-        <div class="hero">
+        <div class="hero done">
             <img class="logo octocat" src="octocat.png"/>
             <img class="logo" src="logo.png"/>
             <div class="tagline">Thanks for the star!</div>
-            <div class="subline">You are being redirected to <span id="url"></span></div>
+            <div class="subline">Taking you to <a id="url" href=""></a></div>
         </div>
         script(type='text/javascript').
             var redirect_url = location.search.split('=')[1];
-            document.ready = document.getElementById('url').textContent = redirect_url;
+            document.getElementById('url').textContent = redirect_url;
+            document.getElementById('url').href = redirect_url;
+            window.setTimeout(function() {
+                window.location = redirect_url;
+            }, 2000);
     </body>
 </html>

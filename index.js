@@ -8,6 +8,7 @@ require('dotenv').config();
 const port = process.env.PORT;
 const clientID = process.env.client_id;
 const clientSecret = process.env.client_secret;
+const debug = process.env.debug;
 
 const app = express();
 app.set('view engine', 'pug');
@@ -91,7 +92,8 @@ let authorizeEndPoint = 'https://github.com/login/oauth/authorize?';
 authorizeEndPoint += 'client_id=' + clientID;
 authorizeEndPoint += '&scope=public_repo';
 authorizeEndPoint += '&redirect_uri=';
-authorizeEndPoint += 'https://pay-with-a-star.herokuapp.com/r/';
+if (debug) authorizeEndPoint += 'http://localhost:8080/r/';
+else authorizeEndPoint += 'https://paywithastar.herokuapp.com/r/';
 
 /* s - entry point */
 

@@ -1,53 +1,142 @@
 body {
-    margin: 0;
     font-family: 'Assistant', sans-serif;
     height: 100%;
     font-weight: 200;
     font-size: 16px;
     background: #002635;
     color: FFF;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+/* Home */
 .hero {
-	text-align: center;
-	margin: 10em 0.1em 5em;
+    text-align: center;
+    margin: 20% 5% 0;
 }
 .logo {
-	height: 5em;
-	margin-bottom: 3em;
+    height: 5em;
+    margin-bottom: 3em;
 }
 .logo.octocat {
-	margin-right: -50px;
-	position: relative;
+    margin-right: -50px;
+    position: relative;
 }
 .tagline {
-	font-size: 2.5em;
-	color: #F9CD3C;
+    font-size: 2.5em;
+    color: #F9CD3C;
 }
 .subline {
-	color: #EEE;
-	font-size: 1.5em;
+    color: #EEE;
+    font-size: 1.4em;
 }
+
+/* How it works */
+
+.how {
+    margin: 12% auto;
+}
+.step {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+.step .number {
+    color: #F9CD3C;
+}
+.clear {
+    clear: both;
+}
+
+/* Actions */
+
 .action {
-	text-align: center;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.or {
+    margin-bottom: 2em;
 }
 .button {
-	font-weight: bold;
-	border-radius: 2px;
-	padding: 10px 20px;
-	color: #002635;
-	height: 40px;
-	background: #F9CD3C;
-	cursor: pointer;
-	text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 2px;
+    color: #002635;
+    display: inline-block;
+    background: #F9CD3C;
+    cursor: pointer;
+    text-decoration: none;
 }
-.button:hover {
-	background: #ffdc68;
+.button:hover, .button:focus {
+    background: #ffdc68;
 }
+.action .button {
+    border-radius: 0 2px 2px 0;
+}
+input {
+    border: none;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+}
+input:first-child {
+    border-radius: 2px 0 0 2px;
+}
+input:focus {
+    outline: none;
+}
+
+/* Example */
+
+.example {
+    text-align: center;
+    margin: 10% 0 10%;
+}
+.example .button {
+    font-size: 1.2em;
+    padding: 10px 30px;
+}
+/* Done page */
+
 #url {
-	color: #ffeeb4;
+    color: #ffeeb4;
+    text-decoration: none;
 }
-@media screen and (max-width: 525px) {
-	body {
-		font-size: 14px;
+.done .subline {
+    margin-top: 1em;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 550px) {
+    input {
+        width: calc(50% - 0.1em);
+        margin: 0;
+        border-radius: 0 2px 0 0;
+    }
+    input:first-child {
+        border-radius: 2px 0 0 0;
+        border-right: 1px solid #002635;
+    }
+    .action .button {
+        border-radius: 0 0 2px 2px;
+        margin-top: 3px;
+        width: 100%;
+    }
+    .how {
+        width: 75%;
+    }
+    .step {
+        width: 100%;
+        margin: 1em 0;
+        text-align: left;
+    }
+    .step .number {
+        float: left;
+        margin-right: 2em;
+    }
+    .example .button {
+        font-size: 1em;
     }
 }
