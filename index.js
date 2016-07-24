@@ -177,3 +177,9 @@ app.get('/', (req, res) => {
     res.render('hi');
 });
 
+/* Status end point */
+
+app.get('/status', (req, res) => {
+    res.end('Alive');
+});
+
