@@ -42,7 +42,7 @@ pg.connect(process.env.DATABASE_URL, (err, client) => {
  *
  * code = access code
  * params = {author, repo}
- * callback = callback function (likeRepo)
+ * callback = callback function (starRepo)
  * res = express response object
  *
  */
@@ -85,7 +85,7 @@ let getDataFromHash = (hash, callback) => {
     });
 };
 
-/* Like repo
+/* Star repo
  *
  * token = github access token
  * hash = identifier
@@ -93,7 +93,7 @@ let getDataFromHash = (hash, callback) => {
  *
  */
 
-let likeRepo = (token, hash, res) => {
+let starRepo = (token, hash, res) => {
     getDataFromHash(hash, (data) => {
         let url = 'https://api.github.com/user/starred/';
         url += data.repo;
@@ -130,7 +130,7 @@ app.get('/s/:hash', (req, res) => {
 app.get('/r/:hash', (req, res) => {
     let code = req.query.code;
     let hash = req.params.hash;
-    getAccessToken(code, hash, likeRepo, res);
+    getAccessToken(code, hash, starRepo, res);
 });
 
 /* Page before redirecting */
