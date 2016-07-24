@@ -14,6 +14,7 @@
             var redirect_url = location.search.split('=')[1];
             document.getElementById('url').textContent = redirect_url;
             document.getElementById('url').href = redirect_url;
+            mixpanel.track('Done page', {redirect_url: redirect_url});
             window.setTimeout(function() {
                 window.location = redirect_url;
             }, 3000);

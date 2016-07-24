@@ -10,7 +10,11 @@
             <div class="subline">Here's your link</div>
         </div>
         <div class="action">
-            <input type="text" value="!{link}"/>
+            <input type="text" value="!{link}" id="share-link"/>
         </div>
+        script(type='text/javascript').
+            document.getElementById('share-link').addEventListener('click', function() {
+                mixpanel.track('Click sharing link');
+            });
     </body>
 </html>

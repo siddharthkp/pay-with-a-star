@@ -26,16 +26,19 @@
             <div class="clear"></div>
         </div>
         <div class="example">
-            <a href="/s/demo" class="button">try the demo link</a>
+            <a href="/s/demo" class="button" id="demo-link">try the demo link</a>
         </div>
         <div class="action">
             <div class="or">or</div>
-            <form action="/generate" method="post">
+            <form action="/generate" method="post" id="home-form">
                 <input type="text" name="author" placeholder="author"/>
                 <input type="text" name="repo" placeholder="repo"/>
                 <input type="text" name="redirection" placeholder="link to content"/>
                 <input type="submit" class="button" value="create your own"/>
             </form>
         </div>
+        script(type='text/javascript').
+            mixpanel.track_links('#demo-link', 'Demo link from home');
+            mixpanel.track_forms('#home-form', 'Create link from home');
     </body>
 </html>

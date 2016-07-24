@@ -1,11 +1,7 @@
 <html>
     <head>
         <title>Pay with a star - Generate a link</title>
-        <link rel="stylesheet" href="style.css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link href="https://fonts.googleapis.com/css?family=Assistant:200" rel="stylesheet">
-        <meta name="theme-color" content="#002635" />
+        include ./head.pug
     </head>
     <body class="new">
         <div class="hero">
@@ -14,12 +10,14 @@
             <div class="subline">Create your own link</div>
         </div>
         <div class="action">
-            <form action="/generate" method="post">
+            <form action="/generate" method="post" id="new-form">
                 <input type="text" name="author" placeholder="author"/>
                 <input type="text" name="repo" placeholder="repo"/>
                 <input type="text" name="redirection" placeholder="link to content"/>
                 <input type="submit" class="button" value="generate link"/>
             </form>
         </div>
+        script(type='text/javascript').
+            mixpanel.track_forms('#new-form', 'Create link from new');
     </body>
 </html>
