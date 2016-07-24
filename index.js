@@ -12,6 +12,8 @@ const clientSecret = process.env.client_secret;
 const app = express();
 app.set('view engine', 'pug');
 
+app.use(express.static('static'));
+
 /* Server started */
 app.listen(port, () => {
   console.log('Server started.');
@@ -106,11 +108,15 @@ app.get('/r/:shortlink', (req, res) => {
     getAccessToken(code, shortlink, likeRepo, res);
 });
 
+/* Page before redirecting */
+
 app.get('/done', (req, res) => {
     res.render('done');
 });
 
+/* Home page */
+
 app.get('/', (req, res) => {
-    res.end('hi');
+    res.render('hi');
 });
 

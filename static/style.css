@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: 'Assistant', sans-serif;
+    height: 100%;
+    font-weight: 200;
+    font-size: 16px;
+    background: #002635;
+    color: FFF;
+}
+.hero {
+	text-align: center;
+	margin: 10em 0.1em 5em;
+}
+.logo {
+	height: 5em;
+	margin-bottom: 3em;
+}
+.logo.octocat {
+	margin-right: -50px;
+	position: relative;
+}
+.tagline {
+	font-size: 2.5em;
+	color: #F9CD3C;
+}
+.subline {
+	color: #EEE;
+	font-size: 1.5em;
+}
+.action {
+	text-align: center;
+}
+.button {
+	font-weight: bold;
+	border-radius: 2px;
+	padding: 10px 20px;
+	color: #002635;
+	height: 40px;
+	background: #F9CD3C;
+	cursor: pointer;
+	text-decoration: none;
+}
+.button:hover {
+	background: #ffdc68;
+}
+#url {
+	color: #ffeeb4;
+}
+@media screen and (max-width: 525px) {
+	body {
+		font-size: 14px;
+    }
+}
