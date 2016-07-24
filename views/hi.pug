@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Assistant:200" rel="stylesheet">
         <meta name="theme-color" content="#002635" />
     </head>
-    <body>
+    <body class="home">
         <div class="hero">
             <img class="logo octocat" src="octocat.png"/>
             <img class="logo" src="logo.png"/>
@@ -21,7 +21,7 @@
             </div>
             <div class="step">
                 <span class="number">2</span>
-                <div class="description">People pay with a star</div>
+                <div class="description">People star your repo</div>
             </div>
             <div class="step">
                 <span class="number">3</span>
@@ -30,13 +30,14 @@
             <div class="clear"></div>
         </div>
         <div class="example">
-            <a href="/s/demo" class="button">try the demo</a>
+            <a href="/s/demo" class="button">try the demo link</a>
         </div>
         <div class="action">
             <div class="or">or</div>
-            <form action="/new">
-                <input type="text" placeholder="author"/>
-                <input type="text" placeholder="repo"/>
+            <form action="/generate" method="post">
+                <input type="text" name="author" placeholder="author"/>
+                <input type="text" name="repo" placeholder="repo"/>
+                <input type="text" name="redirection" placeholder="link to content"/>
                 <input type="submit" class="button" value="create your own"/>
             </form>
         </div>

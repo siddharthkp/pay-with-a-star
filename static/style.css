@@ -9,10 +9,46 @@ body {
     margin: 0 auto;
 }
 
-/* Home */
+/* Inputs and buttons */
+
+.button {
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 2px;
+    color: #002635;
+    display: inline-block;
+    background: #F9CD3C;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button:hover, .button:focus {
+    background: #ffdc68;
+}
+
+input {
+    border: none;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+    width: 60%;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+input:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 600px) {
+    input {
+        width: 100%;
+    }
+}
+
+/* Hero */
+
 .hero {
     text-align: center;
-    margin: 20% 5% 0;
+    padding: 15% 5% 0;
 }
 .logo {
     height: 5em;
@@ -29,6 +65,11 @@ body {
 .subline {
     color: #EEE;
     font-size: 1.4em;
+}
+@media screen and (min-width: 600px) {
+    .home input {
+        width: 24%;
+    }
 }
 
 /* How it works */
@@ -48,82 +89,7 @@ body {
     clear: both;
 }
 
-/* Actions */
-
-.action {
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-}
-.or {
-    margin-bottom: 2em;
-}
-.button {
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 2px;
-    color: #002635;
-    display: inline-block;
-    background: #F9CD3C;
-    cursor: pointer;
-    text-decoration: none;
-}
-.button:hover, .button:focus {
-    background: #ffdc68;
-}
-.action .button {
-    border-radius: 0 2px 2px 0;
-}
-input {
-    border: none;
-    font-family: 'Assistant', sans-serif;
-    font-size: 1em;
-    padding: 10px 20px;
-}
-input:first-child {
-    border-radius: 2px 0 0 2px;
-}
-input:focus {
-    outline: none;
-}
-
-/* Example */
-
-.example {
-    text-align: center;
-    margin: 10% 0 10%;
-}
-.example .button {
-    font-size: 1.2em;
-    padding: 10px 30px;
-}
-/* Done page */
-
-#url {
-    color: #ffeeb4;
-    text-decoration: none;
-}
-.done .subline {
-    margin-top: 1em;
-}
-
-/* Media queries */
-
-@media screen and (max-width: 550px) {
-    input {
-        width: calc(50% - 0.1em);
-        margin: 0;
-        border-radius: 0 2px 0 0;
-    }
-    input:first-child {
-        border-radius: 2px 0 0 0;
-        border-right: 1px solid #002635;
-    }
-    .action .button {
-        border-radius: 0 0 2px 2px;
-        margin-top: 3px;
-        width: 100%;
-    }
+@media screen and (max-width: 600px) {
     .how {
         width: 75%;
     }
@@ -136,7 +102,49 @@ input:focus {
         float: left;
         margin-right: 2em;
     }
+}
+
+/* Example */
+
+.example {
+    text-align: center;
+    margin: 10% 0 10%;
+}
+.example .button {
+    font-size: 1.2em;
+    padding: 10px 30px;
+}
+
+@media screen and (max-width: 600px) {
     .example .button {
         font-size: 1em;
     }
+}
+
+
+/* Actions */
+
+.action {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.or {
+    margin-bottom: 2em;
+}
+
+/* New page */
+
+.new .hero {
+    padding: 20% 5% 10%;
+}
+
+/* Done page */
+
+#url {
+    color: #ffeeb4;
+    text-decoration: none;
+}
+.done .subline {
+    margin-top: 1em;
 }
