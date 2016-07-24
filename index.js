@@ -74,14 +74,14 @@ let getDataFromHash = (hash, callback) => {
     database.query(query, (err, result) => {
         if (err) throw err;
         let redirect_url;
+        let repo;
         if (result.rows.length) {
+            repo = result.rows[0].repo;
             redirect_url = result.rows[0].redirection;
         } else {
             redirect_url = host;
         }
-        callback({
-            redirect_url: redirect_url
-        });
+        callback({repo, redirect_url});
     });
 };
 
@@ -96,7 +96,7 @@ let getDataFromHash = (hash, callback) => {
 let likeRepo = (token, hash, res) => {
     getDataFromHash(hash, (data) => {
         let url = 'https://api.github.com/user/starred/';
-        url += data.author + '/' + data.repo;
+        url += data.repo;
         url += '?access_token=' + token;
 
         let options = {
