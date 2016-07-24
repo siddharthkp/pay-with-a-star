@@ -16,6 +16,8 @@ const debug = process.env.DEBUG;
 let host = 'https://paywithastar.herokuapp.com';
 if (debug) host = 'http://localhost:' + port;
 
+if (!debug && process.env.NEWRELIC_KEY) require('newrelic');
+
 const app = express();
 app.set('view engine', 'pug');
 app.use(express.static('static'));
