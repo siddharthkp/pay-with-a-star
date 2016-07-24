@@ -23,6 +23,9 @@ app.set('view engine', 'pug');
 app.use(express.static('static'));
 app.use(bodyparser.urlencoded());
 
+const mixpanel_token = process.env.MIXPANEL_TOKEN;
+app.locals.mixpanel_token = mixpanel_token;
+
 /* Server started */
 app.listen(port, () => {
   console.log('Server started.');
