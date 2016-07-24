@@ -150,8 +150,7 @@ app.get('/new', (req, res) => {
 let generateLink = (data, callback) => {
     let length = 6;
     let hash = (Math.random().toString(36)+'00000000000000000').slice(2, length +2);
-    let link;
-    if (debug) link = host + '/s/' + hash;
+    let link = host + '/s/' + hash;
 
     let repo = data.author + '/' + data.repo;
 
@@ -173,7 +172,6 @@ let generateLink = (data, callback) => {
 app.post('/generate', (req, res) => {
     let data = req.body;
     generateLink(data, (link) => {
-        console.log(link);
         res.render('generate', {link});
     });
 });
