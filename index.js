@@ -142,7 +142,7 @@ app.get('/done', (req, res) => {
 /* New link page */
 
 app.get('/new', (req, res) => {
-    res.render('new', {balle:'lala'});
+    res.render('new');
 });
 
 /* Generate links */
