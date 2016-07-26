@@ -65,7 +65,7 @@ let getAccessToken = (code, hash, callback, res) => {
         }
     };
     request.post(options, (err, httpResponse, body) => {
-        logger.captureMessage('Oath', {level: debug, extra: body});
+        logger.captureMessage('Oath', {level: 'debug', extra: body});
         let access_token = JSON.parse(body).access_token;
         callback(access_token, hash, res);
     });
